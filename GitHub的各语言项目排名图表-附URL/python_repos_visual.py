@@ -3,7 +3,7 @@ import pygal
 from pygal.style import LightColorizedStyle as LCS, LightenStyle as LS
 
 # 执行API调用并存储响应
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
+url = 'https://api.github.com/search/repositories?q=language:golang&sort=stars'
 r = requests.get(url)
 print("Status code:", r.status_code)
 
@@ -39,9 +39,9 @@ my_config.show_minor_y_guides = False
 my_config.width = 1000
 
 chart = pygal.Bar(my_config, style=my_style)
-chart.title = 'Most-Starred Python Projects on GitHub'
+chart.title = 'Most-Starred Go Projects on GitHub'
 chart.x_labels = names
 
 chart.add('', plot_dicts)
-chart.render_to_file('python_repos.svg')
+chart.render_to_file('Go_repos.svg')
 
