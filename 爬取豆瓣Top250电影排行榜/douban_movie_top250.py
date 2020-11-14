@@ -22,7 +22,8 @@ import bs4
 # 抓取网页
 def open_url(url):
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3314.0 Safari/537.36 SE 2.X MetaSr 1.0"}
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3314.0 "
+                      "Safari/537.36 SE 2.X MetaSr 1.0"}
     res = requests.get(url, headers=headers)
     return res
 
@@ -83,3 +84,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
+这是一个入口
+Python属于脚本语言，是一行一行执行的
+不是像编译语言先将程序编译成二进制再运行，而是动态的从第一行开始逐行执行
+if __name__ == "__main__"，可以理解为如果模块是直接被运行的，则代码块被运行；
+如果模块是被导入的，则代码块不被运行
+就相当于是Python的模拟入口
+__name__是内置变量，用于表示当前模块的名字，同时还能反映一个包的结构
+python -m：-m参数表示将一个或者包作为脚本运行
+__main__.py文件：相当于是一个包的入口程序
+"""
